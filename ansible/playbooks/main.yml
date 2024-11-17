@@ -1,0 +1,20 @@
+---
+- name: Common linux tools
+  hosts: all
+  become: yes
+  roles: 
+    - dmytrokrynytsyn.components.components
+
+- name: Install Redis primary
+  hosts: redis_primary
+  become: yes
+  roles: 
+    - dmytrokrynytsyn.components.redis6_primary
+
+- name: Install Redis replica
+  hosts: redis_secondary
+  become: yes
+  vars:
+    redis_primary_host: "{{ hostvars[groups['redis_primary'][0]]['redis_primary_private_ip'] }}"
+  roles: 
+    - dmytrokrynytsyn.components.redis6_replica
