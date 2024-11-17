@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   roles: 
-    - dmytrokrynytsyn.components.components
+    - dmytrokrynytsyn.components.linux_ops_tools
 
 - name: Install Redis primary
   hosts: redis_primary
