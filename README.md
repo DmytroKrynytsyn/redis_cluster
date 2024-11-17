@@ -1,4 +1,4 @@
-# **Redis Cluster Provisioning**
+# **Redis Cluster, High Availability (HA) Architecture**
 
 This project demonstrates the provisioning and configuration of a Redis cluster with one master and one read replica. It showcases a DevOps workflow integrating **Terraform**, **Terragrunt**, and **Ansible**, following best practices with modular and reusable Ansible roles.
 
